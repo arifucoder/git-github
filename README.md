@@ -7,7 +7,7 @@ git init
 
 # Stage all files
 git add .
-# 👉 সব ফাইলকে Git এর স্টেজিং এrea-তে যোগ করে
+# 👉 সব ফাইলকে Git এর স্টেজিং area-তে যোগ করে
 
 # Commit changes
 git commit -m "message"
@@ -15,7 +15,7 @@ git commit -m "message"
 
 # Rename branch to main
 git branch -M main
-# 👉 বর্তমান ব্রাঞ্চকে জোরপূর্বক 'main' নাম দেয়
+# 👉 বর্তমান Master ব্রাঞ্চকে জোরপূর্বক 'main' নাম দেয়
 
 # Add remote
 git remote add origin https://github.com/your-username/your-repo.git
