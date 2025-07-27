@@ -1,41 +1,55 @@
-## 📘 Git Commands
+## 📘 Git Commands (with Bangla Guide)
 
-# Initialize a new Git repository
+```bash
+# Init repo
 git init
+# 👉 একটি নতুন Git রিপোজিটরি শুরু করে
 
-# Add all files to the staging area
+# Stage all files
 git add .
+# 👉 সব ফাইলকে Git এর স্টেজিং এrea-তে যোগ করে
 
-# Commit the staged files with a message
-git commit -m "your message"
+# Commit changes
+git commit -m "message"
+# 👉 একটি মেসেজ সহ পরিবর্তন সংরক্ষণ করে
 
-# Rename current branch to 'main' (forcefully)
+# Rename branch to main
 git branch -M main
+# 👉 বর্তমান ব্রাঞ্চকে জোরপূর্বক 'main' নাম দেয়
 
-# Add a remote repository with the name 'origin'
+# Add remote
 git remote add origin https://github.com/your-username/your-repo.git
+# 👉 লোকাল রিপোজিটরির সাথে GitHub রিপোজিটরি যুক্ত করে
 
-# Push current branch to origin and set upstream tracking
+# Push & set upstream
 git push -u origin main
+# 👉 main ব্রাঞ্চকে GitHub-এ পাঠায় এবং future push/pull সহজ করে
 
-# Change the remote repository URL
+# Change remote URL
 git remote set-url origin https://github.com/your-username/new-repo.git
+# 👉 রিমোট রিপোজিটরির URL পরিবর্তন করে
 
-# Check the current remote URLs (fetch & push)
+# Show remotes
 git remote -v
+# 👉 বর্তমানে সেট থাকা রিমোটগুলোর URL দেখায় (fetch/push)
 
-# Pull the latest changes from remote using rebase (cleaner history)
+# Pull with rebase
 git pull --rebase
+# 👉 রিমোট থেকে কোড নিয়ে নিজের কাজগুলো রিবেজ করে বসায়
 
-# Optional: remove existing remote (if needed)
+# Remove remote
 git remote remove origin
+# 👉 রিমোট রিপোজিটরি `origin` কে মুছে ফেলে
 
-
-# Check current branch and status
+# Check status
 git status
+# 👉 ফাইলের বর্তমান অবস্থা দেখায় (staged/unstaged/untracked)
 
-# View current branches
+# List branches
 git branch
+# 👉 লোকাল ব্রাঞ্চগুলোর তালিকা দেখায়
 
-# View commit history
+# Show commit history
 git log
+# 👉 কমিট হিস্টোরি দেখায় (তারিখ, ম্যাসেজসহ)
+```
