@@ -88,4 +88,56 @@ git push origin arif
 # Switch back to main branch
 git checkout main
 # 👉 আবার 'main' ব্রাঞ্চে ফিরে আসে
+
+---------------- 🔀 Merging Branches ----------------
+
+# Switch to main branch
+git checkout main
+# 👉 মূল ব্রাঞ্চে ফিরে যাও যেখানে merge করতে চাও
+
+# Merge another branch into main
+git merge arif
+# 👉 'arif' ব্রাঞ্চের কাজগুলো main-এ যুক্ত করো (fast-forward or merge commit)
+
+# If conflict happens, resolve the conflicting files manually
+# 👉 কনফ্লিক্ট হলে সংশ্লিষ্ট ফাইল খুলে ঠিক করে নিতে হবে
+
+# After resolving conflict, stage the changes
+git add .
+# 👉 কনফ্লিক্ট ঠিক করার পর পরিবর্তনগুলো স্টেজ করো
+
+# Then complete the merge by committing
+git commit -m "resolved merge conflict between main and arif"
+# 👉 ম্যানুয়ালি কমিট করে merge সম্পূর্ণ করো
+
+
+---------------- 📦 Deleting Branches ----------------
+
+# Delete a local branch
+git branch -d arif
+# 👉 কাজ শেষে 'arif' ব্রাঞ্চ লোকাল থেকে মুছে ফেলো (if fully merged)
+
+# Force delete a branch (if not merged)
+git branch -D arif
+# 👉 জোরপূর্বক ব্রাঞ্চ মুছে ফেলে (সাবধান হয়ে ব্যবহার করো)
+
+# Delete a remote branch
+git push origin --delete arif
+# 👉 GitHub থেকে 'arif' ব্রাঞ্চ মুছে ফেলো
+
+
+---------------- 📬 Pull Request (PR) Guide ----------------
+
+# After pushing a new branch (e.g., arif), visit the following GitHub URL:
+https://github.com/your-username/your-repo/pull/new/arif
+# 👉 নতুন ব্রাঞ্চ GitHub-এ push করার পর ঐ ব্রাঞ্চ থেকে PR তৈরি করো
+
+# Fill in title, description, and click "Create Pull Request"
+# 👉 PR এর টাইটেল, বিবরণ দিয়ে তৈরি করো
+
+# After review, the PR can be merged into main via GitHub interface
+# 👉 রিভিউ শেষে GitHub থেকেই merge করা যায়
+```
+
+
 ```
