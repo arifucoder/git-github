@@ -139,11 +139,11 @@ https://github.com/your-username/your-repo/pull/new/arif
 # 👉 রিভিউ শেষে GitHub থেকেই merge করা যায়
 
 
----------------- Last commit remove ----------------
-# step 1: 
+----------------  Remove Last Commit ----------------
+# step 1: Remove the last commit locally:
 git reset --hard HEAD~1
 
-# step 2:
+# step 2: Force push the updated history to GitHub:
 git push origin main --force
 
 
@@ -151,15 +151,16 @@ git push origin main --force
 
 
 ```bash
----------------- repo commit author change ----------------
-# STEP 1: old backup refs delete করো
+---------------- Repository Commit Author Change ----------------
+
+# STEP 1: Delete old backup refs
 
 rm -rf .git/refs/original/
 git reflog expire --expire=now --all
 git gc --prune=now
 
 
-# STEP 2: এবার full rewrite করো
+# STEP 2: Rewrite the full Git history
 
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --env-filter '
 
@@ -170,27 +171,29 @@ export GIT_COMMITTER_EMAIL="arifuddincoder@gmail.com"
 
 ' --tag-name-filter cat -- --all
 
-# STEP 3: force push
+
+# STEP 3: Force push
 
 git push origin --force --all
 
 
 
----------------- repo commit author change ----------------
-# github logout
+---------------- GitHub Account Change ----------------
+
+# GitHub logout
 gh auth logout
 
-# github login status check
+# Check GitHub login status
 gh auth status
 
-# github login
+# GitHub login
 gh auth login
 
-# check করো তুমি কোন account use করছো:
+# Check which account you are using
 git config user.name
 git config user.email
 
-# যদি wrong হয়, change করো:
+# If the account is wrong, change it
 git config --global user.name "arifuddincoder"
 git config --global user.email "arifuddincoder@gmail.com"
 
