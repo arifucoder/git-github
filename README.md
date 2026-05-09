@@ -137,4 +137,61 @@ https://github.com/your-username/your-repo/pull/new/arif
 
 # After review, the PR can be merged into main via GitHub interface
 # 👉 রিভিউ শেষে GitHub থেকেই merge করা যায়
+
+
+---------------- Last commit remove ----------------
+# step 1: 
+git reset --hard HEAD~1
+
+# step 2:
+git push origin main --force
+
+
+```
+
+
+```bash
+---------------- repo commit author change ----------------
+# STEP 1: old backup refs delete করো
+
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git gc --prune=now
+
+
+# STEP 2: এবার full rewrite করো
+
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --env-filter '
+
+export GIT_AUTHOR_NAME="arifuddincoder"
+export GIT_AUTHOR_EMAIL="arifuddincoder@gmail.com"
+export GIT_COMMITTER_NAME="arifuddincoder"
+export GIT_COMMITTER_EMAIL="arifuddincoder@gmail.com"
+
+' --tag-name-filter cat -- --all
+
+# STEP 3: force push
+
+git push origin --force --all
+
+
+
+---------------- repo commit author change ----------------
+# github logout
+gh auth logout
+
+# github login status check
+gh auth status
+
+# github login
+gh auth login
+
+# check করো তুমি কোন account use করছো:
+git config user.name
+git config user.email
+
+# যদি wrong হয়, change করো:
+git config --global user.name "arifuddincoder"
+git config --global user.email "arifuddincoder@gmail.com"
+
 ```
